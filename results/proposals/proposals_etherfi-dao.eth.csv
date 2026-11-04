@@ -1,0 +1,4 @@
+proposal_id,title,created,voters,non_voting_active_addresses,turnout_active_electorate_pct,vp_cast,scores_total_api,gini,nakamoto50,top1_pct,top5_pct,top10_pct,hhi,reason_share_pct
+0xe5b64c773d23c92e62092a713b14cc72a98a46c923e36cf885455118854337b0,Ether.Fi DAO Proposal: Treasury Deployment for ETHFI Buy-Back Program,1761861440,172,59,74.46,5121854.292883436,5121854.292883441,0.9764,1,64.12,91.05,97.03,0.4359,4.07
+0x9c293f9cdc89031d4828cd377de770932255e1f548d4f06643a1ebe35ea47a8f,ether.fi DAO Proposal: Treasury Contribution to restore rsETH's backing,1776971047,55,176,23.81,3163433.8943549576,3163433.894354958,0.9443,1,58.88,93.2,99.72,0.3972,5.45
+0xed61adff5103b4e50be49b28fca8ecbbea9d685141d2d5a34d1d24232ac91891,ether.fi DAO Proposal: Programmatic ETHFI Buybacks & Ecosystem Growth,1788053467,80,151,34.63,1141998.9621106295,1141998.9621106293,0.9363,2,29.91,86.38,99.23,0.1884,5.0

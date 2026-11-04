@@ -1,0 +1,4 @@
+proposal_id,title,created,voters,non_voting_active_addresses,turnout_active_electorate_pct,vp_cast,scores_total_api,gini,nakamoto50,top1_pct,top5_pct,top10_pct,hhi,reason_share_pct
+0x9b3a40326411eea6c51ec389a802ed695de53961fa49f6d3525e256513d0a7f9,"YIP-88: Governance Overhaul—DAO Restructuring, stYFI, and Incentives",1759528470,16,3,84.21,631.4613744972661,631.4613744972661,0.7274,2,36.9,89.92,96.61,0.2632,25.0
+0x02ac9f5cc91ad090938195c37e17fd24941a668082b2b6b58f20e11e32d73003,YIP-89: Proposal to Rotate Multisig Signers,1765909440,11,8,57.89,531.6030178515879,531.6030178515878,0.6921,2,43.3,92.52,99.51,0.3364,18.18
+0xe76f57663ce9311eb830ef097812702cbbb55fccbb280d254cdfc1f2c11c261a,YIP-90: yETH Optimistic Recovery Plan,1765909948,12,7,63.16,767.9511324737264,767.9511324737264,0.6948,2,32.95,95.62,99.75,0.2695,33.33
