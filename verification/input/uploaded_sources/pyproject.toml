@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dao-observatory"
+version = "1.0.0"
+description = "DAO Governance Observatory: Reproducible behavioural telemetry pipeline for Snapshot DAOs"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Artūrs Bernovskis", email = "arturs.bernovskis@rtu.lv"}
+]
+dependencies = [
+  "numpy>=1.24.0",
+  "pandas>=2.0.0",
+  "openpyxl>=3.1.0",
+  "matplotlib>=3.7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4.0"]

@@ -1,0 +1,44 @@
+dao,space,source,window_rule,proposals,votes,median_voters,prior_median,yoy_pct,top5_median,top1_median
+1inch Network,1inch.eth,A+B,created,13,348,25,50,-50,0.987904,0.722138
+Aave DAO,aavedao.eth,A+B,created,69,8709,120,223.5,-46.3,0.893062,0.377568
+Aavegotchi,aavegotchi.eth,B,end,37,6449,190,,,0.285535,0.07393
+Across DAO,acrossprotocol.eth,A,created,5,203,42,56,-25,,
+Alchemix,alchemixstakers.eth,A,created,2,62,31,17.5,77.1,,
+Arbitrum DAO,arbitrumfoundation.eth,A+B,created,23,39343,1575,3550,-55.6,,
+Aura Finance,aurafinance.eth,A,created,47,241,5,,,,
+Balancer,balancer.eth,A+B,created,47,343,6,,,1.0,0.766312
+Compound,comp-vote.eth,A+B,created,5,147,32,40.5,-21,0.692706,0.380771
+Convex Finance,cvx.eth,A+B,created,300,6307,10,,,0.99781,0.532386
+CoW DAO,cow.eth,A+B,created,14,663,46,81,-43.2,0.808037,0.302211
+Decentraland,snapshot.dcl.eth,A+B,created,38,783,17.5,27,-35.2,0.98137,0.410669
+ENS,ens.eth,A+B,created,12,1078,89,111,-19.8,0.509954,0.15764
+ether.fi,etherfi-dao.eth,A,created,2,227,113.5,379,-70.1,,
+Frax,frax.eth,A+B,created,13,111,8,12,-33.3,1.0,0.954122
+Gearbox,gearbox.eth,A,created,30,497,17,19,-10.5,,
+Gitcoin,gitcoindao.eth,A+B,created,8,4276,483,1077,-55.2,0.998235,0.501382
+GMX,gmx.eth,A+B,created,12,1528,91.5,337,-72.8,0.813115,0.470669
+GnosisDAO,gnosis.eth,A+B,created,13,924,75,83,-9.6,0.806587,0.408472
+Index Coop,index-coop.eth,A+B,created,4,51,13,2,550,0.799079,0.303357
+Instadapp,instadapp-gov.eth,A,created,1,8,8,9.5,-15.8,,
+Kleros,kleros.eth,A,created,6,98,11.5,16,-28.1,,
+Lido,lido-snapshot.eth,A+B,created,36,2126,56,102,-45.1,0.629043,0.164468
+Mantle (prev. BitDAO),bitdao.eth,A,created,1,175,175,1140,-84.6,,
+Morpho,morpho.eth,A,created,15,198,13,18,-27.8,,
+OlympusDAO,olympusdao.eth,A,created,10,86,7.5,15,-50,,
+PancakeSwap,cakevote.eth,A+B,created,3,269,71,36,97.2,0.794218,0.519054
+QuickSwap,quickvote.eth,A,created,10,321,28.5,53,-46.2,,
+Radiant Capital,radiantcapital.eth,A,created,2,199,99.5,283.5,-64.9,,
+Rocket Pool,rocketpool-dao.eth,A+B,created,6,360,65,83,-21.7,0.410212,0.099349
+SafeDAO,safe.eth,A+B,created,1,93,93,158,-41.1,0.936482,0.574454
+ShapeShift,shapeshiftdao.eth,A,created,14,170,13,16.5,-21.2,,
+Shutter DAO 0x36,shutterdao0x36.eth,A,created,3,41,11,20.5,-46.3,,
+Spark,sparkfi.eth,A,created,72,438,4.5,,,,
+ssv.network,mainnet.ssvnetwork.eth,A,created,17,430,24,28,-14.3,,
+Stake DAO,stakedao.eth,A,created,16,211,11,10.5,4.8,,
+Starknet,starknet.eth,A,created,10,3856,386.5,,,,
+Sushi,sushigov.eth,A+B,created,4,60,12.5,49,-74.5,1.0,0.997018
+Synthetix SCCP/SIP,snxgov.eth,A,created,1,4,4,4,0,,
+Uniswap,uniswapgovernance.eth,A+B,created,9,2100,166,261,-36.4,0.864636,0.247638
+Velora DAO,paraswap-dao.eth,A,created,13,532,42,55,-23.6,,
+WalletConnect Network,walletconnect.eth,A,created,1,1907,1907,8841.5,-78.4,,
+yearn,veyfi.eth,A+B,created,3,39,12,13,-7.7,0.92524,0.369047
