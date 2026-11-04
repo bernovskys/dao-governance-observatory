@@ -1,0 +1,52 @@
+name: Run DAO Governance Observatory (Mode B)
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_full_telemetry:
+        description: "Run full Mode B (30 DAOs + holders + prior-year votes)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q tests
+
+  run:
+    needs: tests
+    if: ${{ inputs.run_full_telemetry }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Run Mode B
+        env:
+          DAOOBS_SALT: ${{ secrets.DAOOBS_SALT }}
+        run: python -m dao_observatory run --config config/top30_2025-10_2026-09.json --holders --prior-votes
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dao-observatory-mode-b-results
+          path: results/
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/
+          git diff --cached --quiet || git commit -m "Update observatory results"
+          git push

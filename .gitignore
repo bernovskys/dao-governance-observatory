@@ -1,0 +1,7 @@
+data/raw/PRIVATE_*
+PRIVATE_*
+data/raw/cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/

@@ -86,7 +86,7 @@ def write_dissertation_markdown_tables(
         med_gini = df["median_gini"].median()
         med_nak = df["median_nakamoto50"].median()
         corr_p2 = df["median_gini"].corr(np.log10(df["median_voters_per_proposal"].astype(float))) if df["median_gini"].notna().sum() >= 2 else float("nan")
-        md_lines.append(f"- **P2 (Concentration vs. breadth)**: Mediānais Gini = **{med_gini:.3f}**, mediānais Nakamoto (50%) = **{med_nak:.1f}**, korelācija starp Gini un $\log_{{10}}(\text{{mediānie balsotāji}})$ = **{corr_p2:.3f}**.")
+        md_lines.append(rf"- **P2 (Concentration vs. breadth)**: Mediānais Gini = **{med_gini:.3f}**, mediānais Nakamoto (50%) = **{med_nak:.1f}**, korelācija starp Gini un $\log_{{10}}(\text{{mediānie balsotāji}})$ = **{corr_p2:.3f}**.")
 
     (out_dir / "dissertation_table_3_13_full.md").write_text("\n".join(md_lines) + "\n", encoding="utf-8")
 
