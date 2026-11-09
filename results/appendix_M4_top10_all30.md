@@ -13,7 +13,7 @@
 | 8 | V9c65dbc756 | 18 of 30 | 4.10 | 51.4 | yes |
 | 9 | Va7026cc0f1 | 29 of 30 | 4.01 | 55.4 | yes |
 | 10 | Vf126720ec7 | 25 of 30 | 3.92 | 59.3 | yes |
-| 11–5216 | 5206 other addresses | 47434 of 30 | 40.66 | 100.0 | yes |
+| 11–5216 | 5206 other addresses | 47434 of 30 | 40.66 | 100.0 | 1361 core |
 
 ## Space: `gitcoindao.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -28,7 +28,7 @@
 | 8 | V4a9d723e06 | 3 of 10 | 0.45 | 99.6 | no |
 | 9 | Va3f73d769d | 2 of 10 | 0.21 | 99.8 | no |
 | 10 | V9200d845f9 | 5 of 10 | 0.05 | 99.8 | yes |
-| 11–919 | 909 other addresses | 4950 of 10 | 0.17 | 100.0 | yes |
+| 11–919 | 909 other addresses | 4950 of 10 | 0.17 | 100.0 | 528 core |
 
 ## Space: `starknet.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -43,7 +43,7 @@
 | 8 | V43909fd4f0 | 4 of 10 | 4.20 | 46.2 | no |
 | 9 | Vddb0984eed | 10 of 10 | 3.50 | 49.7 | yes |
 | 10 | V0016b21448 | 10 of 10 | 3.50 | 53.2 | yes |
-| 11–545 | 535 other addresses | 3792 of 10 | 46.77 | 100.0 | yes |
+| 11–545 | 535 other addresses | 3792 of 10 | 46.77 | 100.0 | 510 core |
 
 ## Space: `uniswapgovernance.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -58,7 +58,7 @@
 | 8 | V3a7a26a703 | 12 of 14 | 5.17 | 73.9 | yes |
 | 9 | V57bf751145 | 6 of 14 | 5.09 | 79.0 | no |
 | 10 | V00b24c8563 | 1 of 14 | 4.55 | 83.6 | no |
-| 11–805 | 795 other addresses | 3295 of 14 | 16.42 | 100.0 | yes |
+| 11–805 | 795 other addresses | 3295 of 14 | 16.42 | 100.0 | 115 core |
 
 ## Space: `aavedao.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -73,7 +73,7 @@
 | 8 | Vbb99d52615 | 80 of 97 | 3.00 | 83.6 | yes |
 | 9 | V430c1d9d96 | 10 of 97 | 2.18 | 85.8 | no |
 | 10 | V4a1e4a87bb | 39 of 97 | 1.68 | 87.4 | no |
-| 11–956 | 946 other addresses | 10471 of 97 | 12.57 | 100.0 | yes |
+| 11–956 | 946 other addresses | 10471 of 97 | 12.57 | 100.0 | 57 core |
 
 ## Space: `gmx.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -88,7 +88,7 @@
 | 8 | Vde9f0a85db | 6 of 12 | 1.70 | 62.8 | yes |
 | 9 | V55ce9f5b4f | 1 of 12 | 1.70 | 64.5 | no |
 | 10 | V48104616ac | 7 of 12 | 1.67 | 66.2 | yes |
-| 11–645 | 635 other addresses | 1479 of 12 | 33.85 | 100.0 | yes |
+| 11–645 | 635 other addresses | 1479 of 12 | 33.85 | 100.0 | 61 core |
 
 ## Space: `ens.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -103,7 +103,7 @@
 | 8 | Vf3834d98ed | 13 of 14 | 4.26 | 62.5 | yes |
 | 9 | Vc382febf9f | 8 of 14 | 3.64 | 66.1 | yes |
 | 10 | V5720076657 | 9 of 14 | 3.61 | 69.8 | yes |
-| 11–230 | 220 other addresses | 1083 of 14 | 30.24 | 100.0 | yes |
+| 11–230 | 220 other addresses | 1083 of 14 | 30.24 | 100.0 | 66 core |
 
 ## Space: `etherfi-dao.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -118,7 +118,7 @@
 | 8 | V5c5ffc7fb2 | 2 of 3 | 2.95 | 83.0 | yes |
 | 9 | V5b3ce47843 | 2 of 3 | 2.57 | 85.6 | yes |
 | 10 | V7881a9a5b6 | 1 of 3 | 2.22 | 87.8 | no |
-| 11–231 | 221 other addresses | 294 of 3 | 12.18 | 100.0 | yes |
+| 11–231 | 221 other addresses | 294 of 3 | 12.18 | 100.0 | 51 core |
 
 ## Space: `gnosis.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -133,7 +133,7 @@
 | 8 | V97faadbc79 | 5 of 19 | 3.47 | 69.7 | no |
 | 9 | Va4fa0d2679 | 4 of 19 | 2.40 | 72.1 | no |
 | 10 | V80ae9931d5 | 1 of 19 | 1.83 | 74.0 | no |
-| 11–297 | 287 other addresses | 1072 of 19 | 26.03 | 100.0 | yes |
+| 11–297 | 287 other addresses | 1072 of 19 | 26.03 | 100.0 | 19 core |
 
 ## Space: `rocketpool-dao.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -148,7 +148,7 @@
 | 8 | V47aba31c03 | 7 of 7 | 4.70 | 58.5 | yes |
 | 9 | Vf11dd18709 | 4 of 7 | 4.13 | 62.7 | yes |
 | 10 | V30bba7373f | 5 of 7 | 3.85 | 66.5 | yes |
-| 11–90 | 80 other addresses | 329 of 7 | 33.48 | 100.0 | yes |
+| 11–90 | 80 other addresses | 329 of 7 | 33.48 | 100.0 | 52 core |
 
 ## Space: `lido-snapshot.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -163,7 +163,7 @@
 | 8 | V9191acf469 | 38 of 42 | 6.01 | 75.5 | yes |
 | 9 | V54bf26a9b6 | 39 of 42 | 3.17 | 78.7 | yes |
 | 10 | V9c9ea23bb3 | 38 of 42 | 3.06 | 81.7 | yes |
-| 11–273 | 263 other addresses | 2067 of 42 | 18.26 | 100.0 | yes |
+| 11–273 | 263 other addresses | 2067 of 42 | 18.26 | 100.0 | 33 core |
 
 ## Space: `cow.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -178,7 +178,7 @@
 | 8 | V54302c8dcd | 3 of 17 | 3.17 | 70.3 | no |
 | 9 | Vf6f573d638 | 15 of 17 | 2.89 | 73.2 | yes |
 | 10 | V5deb32e7fa | 10 of 17 | 2.72 | 75.9 | yes |
-| 11–182 | 172 other addresses | 678 of 17 | 24.06 | 100.0 | yes |
+| 11–182 | 172 other addresses | 678 of 17 | 24.06 | 100.0 | 27 core |
 
 ## Space: `paraswap-dao.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -193,7 +193,7 @@
 | 8 | V268aa61c16 | 12 of 13 | 2.77 | 74.2 | yes |
 | 9 | Va45b573ea1 | 13 of 13 | 2.30 | 76.5 | yes |
 | 10 | V559bd94579 | 13 of 13 | 2.19 | 78.7 | yes |
-| 11–111 | 101 other addresses | 424 of 13 | 21.29 | 100.0 | yes |
+| 11–111 | 101 other addresses | 424 of 13 | 21.29 | 100.0 | 23 core |
 
 ## Space: `acrossprotocol.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -208,7 +208,7 @@
 | 8 | V7165e11a96 | 2 of 5 | 0.87 | 91.9 | no |
 | 9 | V9a948633b6 | 2 of 5 | 0.68 | 92.6 | no |
 | 10 | V1d46b63ef1 | 2 of 5 | 0.63 | 93.3 | no |
-| 11–84 | 74 other addresses | 177 of 5 | 6.74 | 100.0 | yes |
+| 11–84 | 74 other addresses | 177 of 5 | 6.74 | 100.0 | 25 core |
 
 ## Space: `1inch.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -223,7 +223,7 @@
 | 8 | V8285b6d094 | 3 of 17 | 0.73 | 97.3 | no |
 | 9 | V80df8fee6e | 1 of 17 | 0.43 | 97.7 | no |
 | 10 | V6d2636a61f | 1 of 17 | 0.42 | 98.2 | no |
-| 11–59 | 49 other addresses | 335 of 17 | 1.84 | 100.0 | yes |
+| 11–59 | 49 other addresses | 335 of 17 | 1.84 | 100.0 | 18 core |
 
 ## Space: `mainnet.ssvnetwork.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -238,7 +238,7 @@
 | 8 | V8db79a8586 | 11 of 20 | 5.26 | 68.8 | yes |
 | 9 | V3bdfc9dd49 | 18 of 20 | 3.37 | 72.1 | yes |
 | 10 | V06413cc9ee | 19 of 20 | 3.23 | 75.4 | yes |
-| 11–85 | 75 other addresses | 324 of 20 | 24.65 | 100.0 | yes |
+| 11–85 | 75 other addresses | 324 of 20 | 24.65 | 100.0 | 11 core |
 
 ## Space: `alchemixstakers.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -253,7 +253,7 @@
 | 8 | V5bd5fb3723 | 2 of 4 | 3.74 | 75.3 | yes |
 | 9 | V56263cf287 | 4 of 4 | 2.96 | 78.3 | yes |
 | 10 | Veb6fa24cd8 | 2 of 4 | 2.76 | 81.0 | yes |
-| 11–41 | 31 other addresses | 71 of 4 | 18.96 | 100.0 | yes |
+| 11–41 | 31 other addresses | 71 of 4 | 18.96 | 100.0 | 27 core |
 
 ## Space: `quickvote.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -268,7 +268,7 @@
 | 8 | V6664b302ea | 4 of 12 | 3.92 | 60.8 | no |
 | 9 | V3b3a912ecc | 1 of 12 | 3.69 | 64.5 | no |
 | 10 | Vb4b3b51423 | 2 of 12 | 3.08 | 67.5 | no |
-| 11–132 | 122 other addresses | 317 of 12 | 32.45 | 100.0 | yes |
+| 11–132 | 122 other addresses | 317 of 12 | 32.45 | 100.0 | 9 core |
 
 ## Space: `gearbox.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -283,7 +283,7 @@
 | 8 | V4bd9ccae23 | 3 of 32 | 3.85 | 74.7 | no |
 | 9 | V33750e4516 | 15 of 32 | 3.74 | 78.5 | no |
 | 10 | V78e9b42e90 | 10 of 32 | 3.60 | 82.1 | no |
-| 11–81 | 71 other addresses | 400 of 32 | 17.94 | 100.0 | yes |
+| 11–81 | 71 other addresses | 400 of 32 | 17.94 | 100.0 | 8 core |
 
 ## Space: `comp-vote.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -298,7 +298,7 @@
 | 8 | V3f0b141096 | 8 of 8 | 5.43 | 77.8 | yes |
 | 9 | V20fff3009e | 7 of 8 | 4.80 | 82.6 | yes |
 | 10 | V497e40cab0 | 7 of 8 | 4.23 | 86.9 | yes |
-| 11–78 | 68 other addresses | 126 of 8 | 13.13 | 100.0 | yes |
+| 11–78 | 68 other addresses | 126 of 8 | 13.13 | 100.0 | 7 core |
 
 ## Space: `snapshot.dcl.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -313,7 +313,7 @@
 | 8 | Vb853e931d3 | 8 of 61 | 4.15 | 77.1 | no |
 | 9 | Vb65aa1ffcc | 29 of 61 | 3.15 | 80.3 | no |
 | 10 | Vf5abff88dc | 11 of 61 | 2.60 | 82.9 | no |
-| 11–264 | 254 other addresses | 941 of 61 | 17.15 | 100.0 | yes |
+| 11–264 | 254 other addresses | 941 of 61 | 17.15 | 100.0 | 2 core |
 
 ## Space: `morpho.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -328,7 +328,7 @@
 | 8 | V1f5e485f4f | 12 of 18 | 0.76 | 99.2 | yes |
 | 9 | V4f9e3afbb2 | 1 of 18 | 0.43 | 99.6 | no |
 | 10 | Va525345ef4 | 1 of 18 | 0.30 | 99.9 | no |
-| 11–45 | 35 other addresses | 184 of 18 | 0.09 | 100.0 | yes |
+| 11–45 | 35 other addresses | 184 of 18 | 0.09 | 100.0 | 6 core |
 
 ## Space: `index-coop.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -343,7 +343,7 @@
 | 8 | V14826586dd | 4 of 4 | 3.06 | 87.4 | yes |
 | 9 | Vd420c464b7 | 3 of 4 | 2.82 | 90.2 | yes |
 | 10 | Vd6d0e71ada | 1 of 4 | 2.73 | 93.0 | no |
-| 11–19 | 9 other addresses | 17 of 4 | 7.02 | 100.0 | yes |
+| 11–19 | 9 other addresses | 17 of 4 | 7.02 | 100.0 | 4 core |
 
 ## Space: `veyfi.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -358,7 +358,7 @@
 | 8 | Va1d63815dd | 2 of 3 | 1.12 | 94.9 | yes |
 | 9 | V2231ff23e5 | 3 of 3 | 1.12 | 96.0 | yes |
 | 10 | V595abdfcc1 | 3 of 3 | 1.08 | 97.1 | yes |
-| 11–19 | 9 other addresses | 14 of 3 | 2.92 | 100.0 | yes |
+| 11–19 | 9 other addresses | 14 of 3 | 2.92 | 100.0 | 3 core |
 
 ## Space: `stakedao.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -373,7 +373,7 @@
 | 8 | V387a9766cd | 10 of 24 | 3.47 | 76.1 | no |
 | 9 | V01f1889e58 | 17 of 24 | 3.07 | 79.2 | yes |
 | 10 | Vb3ee125e91 | 15 of 24 | 3.02 | 82.2 | yes |
-| 11–67 | 57 other addresses | 170 of 24 | 17.80 | 100.0 | yes |
+| 11–67 | 57 other addresses | 170 of 24 | 17.80 | 100.0 | 3 core |
 
 ## Space: `kleros.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -388,7 +388,7 @@
 | 8 | V61c398f235 | 1 of 6 | 2.26 | 72.9 | no |
 | 9 | V304208d3af | 1 of 6 | 2.16 | 75.1 | no |
 | 10 | Ve11d0489cd | 3 of 6 | 2.07 | 77.1 | yes |
-| 11–61 | 51 other addresses | 75 of 6 | 22.86 | 100.0 | yes |
+| 11–61 | 51 other addresses | 75 of 6 | 22.86 | 100.0 | 6 core |
 
 ## Space: `shapeshiftdao.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -403,7 +403,7 @@
 | 8 | V10f6c2581a | 6 of 20 | 5.02 | 72.7 | no |
 | 9 | V1c1589436f | 12 of 20 | 4.89 | 77.6 | yes |
 | 10 | Vfb88d1a902 | 5 of 20 | 4.83 | 82.5 | no |
-| 11–52 | 42 other addresses | 130 of 20 | 17.54 | 100.0 | yes |
+| 11–52 | 42 other addresses | 130 of 20 | 17.54 | 100.0 | 2 core |
 
 ## Space: `shutterdao0x36.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -418,7 +418,7 @@
 | 8 | Vb89a14fd34 | 2 of 9 | 3.80 | 82.1 | no |
 | 9 | V88780814a1 | 1 of 9 | 3.79 | 85.8 | no |
 | 10 | V6381ae6945 | 2 of 9 | 3.55 | 89.4 | no |
-| 11–38 | 28 other addresses | 58 of 9 | 10.60 | 100.0 | yes |
+| 11–38 | 28 other addresses | 58 of 9 | 10.60 | 100.0 | 2 core |
 
 ## Space: `cvx.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -433,7 +433,7 @@
 | 8 | Vf5984425cd | 48 of 335 | 0.91 | 92.6 | no |
 | 9 | V90ad040c78 | 14 of 335 | 0.89 | 93.5 | no |
 | 10 | V9319adff29 | 23 of 335 | 0.88 | 94.3 | no |
-| 11–358 | 348 other addresses | 5865 of 335 | 5.67 | 100.0 | yes |
+| 11–358 | 348 other addresses | 5865 of 335 | 5.67 | 100.0 | 2 core |
 
 ## Space: `frax.eth`
 | Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |
@@ -448,5 +448,5 @@
 | 8 | V982a222ea9 | 1 of 16 | 0.03 | 99.9 | no |
 | 9 | V6dcadd6c7d | 1 of 16 | 0.01 | 99.9 | no |
 | 10 | Vf833cf8a1f | 1 of 16 | 0.01 | 100.0 | no |
-| 11–43 | 33 other addresses | 68 of 16 | 0.05 | 100.0 | yes |
+| 11–43 | 33 other addresses | 68 of 16 | 0.05 | 100.0 | 1 core |
 
