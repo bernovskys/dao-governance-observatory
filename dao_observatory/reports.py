@@ -100,9 +100,11 @@ def write_dissertation_markdown_tables(
         m4_lines.append("| Rank | Voter (pseudonym) | Proposals voted | Share of all VP cast (%) | Cumulative (%) | Core |")
         m4_lines.append("|---:|---|---:|---:|---:|:---:|")
         for vr in rows:
+            # The remainder row carries a "<n> core" string; plain voter rows carry a bool.
+            core_label = vr["core"] if isinstance(vr["core"], str) else ("yes" if vr["core"] else "no")
             m4_lines.append(
                 f"| {vr['rank']} | {vr['voter_id']} | {vr['votes']} of {vr['proposals_total']} | "
-                f"{vr['vp_share_pct']:.2f} | {vr['cum_share_pct']:.1f} | {'yes' if vr['core'] else 'no'} |"
+                f"{vr['vp_share_pct']:.2f} | {vr['cum_share_pct']:.1f} | {core_label} |"
             )
         m4_lines.append("")
     (out_dir / "appendix_M4_top10_all30.md").write_text("\n".join(m4_lines) + "\n", encoding="utf-8")

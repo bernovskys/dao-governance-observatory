@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import os
 import secrets
+import sys
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 import numpy as np
@@ -17,6 +18,11 @@ def get_or_create_salt(salt_file: Path = Path("data/raw/PRIVATE_pseudonym_salt.t
     if salt_file.exists():
         return salt_file.read_text(encoding="utf-8").strip()
     new_salt = secrets.token_hex(32)
+    print(
+        f"[DAO Observatory] WARNING: DAOOBS_SALT not set; generated a new random salt in {salt_file}. "
+        "Pseudonyms will NOT match earlier/later runs unless this salt is kept.",
+        file=sys.stderr,
+    )
     salt_file.write_text(new_salt + "\n", encoding="utf-8")
     return new_salt
 

@@ -1,6 +1,7 @@
 """Token holder count retrieval from public Blockscout v2 APIs (Ethereum Mainnet & Arbitrum One)."""
 from __future__ import annotations
 import json
+import sys
 import time
 import urllib.request
 import urllib.error
@@ -21,7 +22,9 @@ class HolderCollector:
         cache_dir: Path = Path("data/raw/cache"),
         sleep_sec: float = 0.5,
         transport: Optional[Callable[[int, str], Optional[int]]] = None,
+        max_retries: int = 4,
     ) -> None:
+        self.max_retries = max_retries
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.sleep_sec = sleep_sec
@@ -50,15 +53,29 @@ class HolderCollector:
             "Accept": "application/json",
             "User-Agent": "DAO-Governance-Observatory/1.0 (Academic Research; RTU)",
         }
-        try:
-            req = urllib.request.Request(url, headers=headers, method="GET")
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                payload = json.loads(resp.read().decode("utf-8"))
-            raw_holders = payload.get("holders") or payload.get("holders_count")
-            holders_count = int(raw_holders) if raw_holders is not None else None
-            cache_file.write_text(json.dumps({"holders_count": holders_count, "source": url}), encoding="utf-8")
-            if self.sleep_sec > 0:
-                time.sleep(self.sleep_sec)
-            return holders_count
-        except Exception:
-            return None
+        for attempt in range(self.max_retries):
+            try:
+                req = urllib.request.Request(url, headers=headers, method="GET")
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    payload = json.loads(resp.read().decode("utf-8"))
+                raw_holders = payload.get("holders_count")
+                if raw_holders is None:
+                    raw_holders = payload.get("holders")
+                holders_count = int(raw_holders) if raw_holders is not None else None
+                if holders_count is not None:
+                    cache_file.write_text(json.dumps({"holders_count": holders_count, "source": url}), encoding="utf-8")
+                if self.sleep_sec > 0:
+                    time.sleep(self.sleep_sec)
+                return holders_count
+            except urllib.error.HTTPError as exc:
+                if exc.code == 404:
+                    # Address is not indexed as a token (e.g. a locker/staking contract): not retryable.
+                    print(f"[holders] {url}: not a token on Blockscout (404)", file=sys.stderr)
+                    return None
+                err: Exception = exc
+            except Exception as exc:  # network errors, timeouts, non-JSON (e.g. Cloudflare challenge page)
+                err = exc
+            if attempt + 1 < self.max_retries:
+                time.sleep((2 ** attempt) * max(1.0, self.sleep_sec))
+        print(f"[holders] {url}: failed after {self.max_retries} attempts ({err!r})", file=sys.stderr)
+        return None

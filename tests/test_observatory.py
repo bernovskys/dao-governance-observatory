@@ -1,4 +1,4 @@
-"""Eleven automated tests for DAO Governance Observatory (runs with both `pytest` and `unittest`)."""
+"""Automated tests for DAO Governance Observatory (runs with both `pytest` and `unittest`)."""
 from __future__ import annotations
 import json
 import sys
@@ -66,7 +66,7 @@ class InMemorySnapshotDouble:
 
 
 class TestDAOObservatory(unittest.TestCase):
-    """Suite of 11 automated tests (9 unit tests + 2 end-to-end API double tests)."""
+    """Unit and end-to-end (API double) tests."""
 
     def test_01_gini_equality_and_extremes(self) -> None:
         self.assertAlmostEqual(gini_coefficient([10.0, 10.0, 10.0, 10.0]), 0.0, places=9)
@@ -342,6 +342,70 @@ class TestDAOObservatory(unittest.TestCase):
             v1 = [r["voter_id"] for r in res1["top10_by_dao"][space_id]]
             v2 = [r["voter_id"] for r in res2["top10_by_dao"][space_id]]
             self.assertEqual(v1, v2)
+
+    def test_12_instrument_coding_no_substring_false_positives_and_wrappers(self) -> None:
+        # "curve"/"block"/"community" previously matched "ve"/"lock"/"uni" substrings.
+        self.assertEqual(code_instrument_class([{"name": "erc20-balance-of", "params": {"symbol": "CURVE-BLOCK community"}}]), "T")
+        self.assertEqual(code_instrument_class([{"name": "erc20-balance-of", "params": {"symbol": "veYFI"}}]), "T+L")
+        wrapped = [{"name": "multichain", "params": {"strategies": [{"name": "erc20-balance-of", "params": {"symbol": "X"}}]}}]
+        self.assertEqual(code_instrument_class(wrapped), "T")
+        deleg = [{"name": "with-delegation", "params": {"symbol": "G", "strategies": [{"name": "erc20-balance-of", "params": {}}]}}]
+        self.assertEqual(code_instrument_class(deleg), "T+D")
+
+    def test_13_graphql_partial_errors_are_not_silently_ignored(self) -> None:
+        import urllib.request as ur
+
+        class _Resp:
+            def __init__(self, body: bytes) -> None:
+                self.body = body
+            def read(self) -> bytes:
+                return self.body
+            def __enter__(self):
+                return self
+            def __exit__(self, *a):
+                return False
+
+        body = json.dumps({"errors": [{"message": "skip too large"}], "data": {"votes": None}}).encode()
+        orig = ur.urlopen
+        ur.urlopen = lambda *a, **k: _Resp(body)
+        try:
+            with tempfile.TemporaryDirectory() as td:
+                c = SnapshotCollector(cache_dir=Path(td), sleep_sec=0.0, max_retries=1)
+                with self.assertRaises(RuntimeError):
+                    c._post_graphql("query { votes { id } }")
+        finally:
+            ur.urlopen = orig
+
+    def test_14_holder_fallback_and_m4_remainder_core_label(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            tmp = Path(td)
+            space_id = "fallbackdao.eth"
+            win_start, win_end = 1759276800, 1790812800
+            props = [{"id": f"p{i}", "title": "t", "created": win_start + 100 + i, "end": win_start + 1000, "state": "closed",
+                      "votes": 12, "scores_total": 12.0 * (12 + 1) / 2, "quorum": 0} for i in range(2)]
+            votes = {p["id"]: [{"id": f"{p['id']}v{j}", "voter": f"0x{j:02d}", "vp": float(j + 1), "choice": 1,
+                                 "reason": "", "created": win_start + 200 + j} for j in range(12)] for p in props}
+            api = InMemorySnapshotDouble({space_id: {"id": space_id, "strategies": []}}, {space_id: props}, votes)
+            cfg = tmp / "cfg.json"
+            cfg.write_text(json.dumps({
+                "window_start_ts": win_start, "window_end_ts": win_end, "h1_end_ts": 1775001600,
+                "prior_start_ts": 1727740800, "prior_end_ts": win_start, "rate_limit_sleep_sec": 0.0,
+                "spaces": [{"rank": 1, "space": space_id, "name": "Fallback DAO", "instrument_class": "T",
+                            "holder_token_chain": 1, "holder_token_address": "0xlocker",
+                            "documented_holder_token": {"chain": 1, "address": "0xtoken", "label": "TKN (documented)"}}],
+            }), encoding="utf-8")
+            hc = HolderCollector(cache_dir=tmp / "cache", sleep_sec=0.0,
+                                 transport=lambda c, a: None if a == "0xlocker" else 500)
+            res = run_observatory(cfg, fetch_holders=True, out_dir=tmp / "out", cache_dir=tmp / "cache",
+                                  salt_file=tmp / "PRIVATE_salt.txt",
+                                  collector=SnapshotCollector(cache_dir=tmp / "cache", sleep_sec=0.0, transport=api),
+                                  holder_collector=hc)
+            row = res["summary"][0]
+            self.assertEqual(row["token_holders"], 500)
+            self.assertEqual(row["holder_token_used"], "TKN (documented) @ 1")
+            m4 = (tmp / "out" / "appendix_M4_top10_all30.md").read_text(encoding="utf-8")
+            remainder = [ln for ln in m4.splitlines() if "other addresses" in ln][0]
+            self.assertTrue(remainder.rstrip().endswith("| 2 core |"), remainder)
 
 
 if __name__ == "__main__":

@@ -1,7 +1,10 @@
 """Snapshot Hub GraphQL collector with caching, timestamp cursor pagination, and count verification."""
 from __future__ import annotations
 import hashlib
+import http.client
 import json
+import os
+import sys
 import time
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
@@ -43,6 +46,9 @@ class SnapshotCollector:
             "Accept": "application/json",
             "User-Agent": "DAO-Governance-Observatory/1.0 (Academic Research; RTU)",
         }
+        api_key = os.environ.get("SNAPSHOT_API_KEY", "").strip()
+        if api_key:
+            headers["x-api-key"] = api_key
         for attempt in range(self.max_retries):
             try:
                 self.network_calls += 1
@@ -50,15 +56,19 @@ class SnapshotCollector:
                 with urllib.request.urlopen(req, timeout=30) as resp:
                     body = resp.read().decode("utf-8")
                     parsed = json.loads(body)
-                if "errors" in parsed and not parsed.get("data"):
+                # Any GraphQL error (even with partial `data`) would silently truncate results.
+                if parsed.get("errors"):
                     raise RuntimeError(f"GraphQL error: {parsed['errors']}")
                 if self.sleep_sec > 0:
                     time.sleep(self.sleep_sec)
-                return parsed.get("data", {})
-            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, RuntimeError) as exc:
+                return parsed.get("data") or {}
+            except (OSError, ValueError, RuntimeError, http.client.HTTPException) as exc:
+                # OSError covers URLError/HTTPError, timeouts and connection resets;
+                # ValueError covers non-JSON (e.g. HTML error/challenge) responses.
                 if attempt + 1 >= self.max_retries:
                     raise
                 backoff = (2 ** attempt) * max(1.0, self.sleep_sec)
+                print(f"[collector] retry {attempt + 1}/{self.max_retries - 1} after {exc!r}", file=sys.stderr)
                 time.sleep(backoff)
         return {}
 
@@ -148,7 +158,9 @@ class SnapshotCollector:
                 cursor_gte = max_created
 
         result = sorted(all_props.values(), key=lambda x: (int(x["created"]), str(x["id"])))
-        cache_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        # Only cache windows that are already over; otherwise new proposals would be missed on re-runs.
+        if int(created_lt) <= int(time.time()):
+            cache_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
         return result
 
     def fetch_votes_for_proposal(self, proposal: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -164,7 +176,6 @@ class SnapshotCollector:
 
         expected_votes = int(proposal.get("votes", 0) or 0)
         if expected_votes == 0:
-            cache_file.write_text("[]", encoding="utf-8")
             return []
 
         page_size = 1000
@@ -231,5 +242,24 @@ class SnapshotCollector:
                 cursor_gte = max_ts
 
         result = sorted(votes_by_voter.values(), key=lambda v: (int(v.get("created", 0)), str(v["voter"]).lower()))
-        cache_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
+
+        # Verification against the proposal's own counters (as promised in the docstring).
+        if len(result) != expected_votes:
+            print(
+                f"[collector] WARNING proposal {pid}: retrieved {len(result)} votes, API reports {expected_votes}",
+                file=sys.stderr,
+            )
+        scores_total = float(proposal.get("scores_total", 0.0) or 0.0)
+        vp_sum = sum(float(v.get("vp", 0.0) or 0.0) for v in result)
+        if scores_total > 0 and abs(vp_sum - scores_total) > max(1e-6, 1e-2 * scores_total):
+            print(
+                f"[collector] WARNING proposal {pid}: VP sum {vp_sum:.4f} differs from scores_total {scores_total:.4f}",
+                file=sys.stderr,
+            )
+
+        # Do not cache votes of proposals that are still open: the vote set can still change.
+        end_ts = int(proposal.get("end", 0) or 0)
+        is_final = str(proposal.get("state") or "closed") == "closed" or (end_ts and end_ts <= int(time.time()))
+        if is_final:
+            cache_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
         return result

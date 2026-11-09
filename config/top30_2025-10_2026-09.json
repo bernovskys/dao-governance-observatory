@@ -4,7 +4,7 @@
   "window_end": "2026-09-30T23:59:59Z",
   "window_start_ts": 1759276800,
   "window_end_ts": 1790812800,
-  "h1_end_ts": 1774915200,
+  "h1_end_ts": 1775001600,
   "prior_start": "2024-10-01T00:00:00Z",
   "prior_end": "2025-09-30T23:59:59Z",
   "prior_start_ts": 1727740800,
@@ -274,7 +274,11 @@
       "holder_token_chain": 1,
       "holder_token_address": "0xf7512B2B20Cf427ADD8b01D8CDEef97a4B0E2C27",
       "holder_token_label": "GEAR (with-delegated)",
-      "documented_holder_token": null
+      "documented_holder_token": {
+        "chain": 1,
+        "address": "0xBa3335588D9403515223F109EdC4eB7269a9Ab5D",
+        "label": "GEAR (documented)"
+      }
     },
     {
       "rank": 20,
@@ -339,7 +343,11 @@
       "holder_token_chain": 1,
       "holder_token_address": "0x90c1f9220d90d3966FbeE24045EDd73E1d588aD5",
       "holder_token_label": "veYFI",
-      "documented_holder_token": null
+      "documented_holder_token": {
+        "chain": 1,
+        "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
+        "label": "YFI (documented)"
+      }
     },
     {
       "rank": 25,
@@ -404,7 +412,11 @@
       "holder_token_chain": 1,
       "holder_token_address": "0x72a19342e8F1838460eBFCCEf09F6585e32db86E",
       "holder_token_label": "CVX",
-      "documented_holder_token": null
+      "documented_holder_token": {
+        "chain": 1,
+        "address": "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B",
+        "label": "CVX (documented)"
+      }
     },
     {
       "rank": 30,

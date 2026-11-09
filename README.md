@@ -24,7 +24,7 @@ The **DAO Governance Observatory** retrieves public off-chain governance records
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Run the 11 automated unit & end-to-end tests
+# 2. Run the automated unit & end-to-end tests
 python -m pytest -q tests
 
 # 3. Set secret pseudonymisation salt (or let the tool generate data/raw/PRIVATE_pseudonym_salt.txt)

@@ -2,7 +2,7 @@
 from __future__ import annotations
 import json
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 import numpy as np
 import pandas as pd
 
@@ -148,13 +148,23 @@ def run_observatory(
         holders_count: Optional[int] = None
         holders_minus_voters: Optional[int] = None
         holder_participation_pct: Optional[float] = None
+        holder_token_used: Optional[str] = None
         if fetch_holders:
+            # Primary token first; fall back to the documented governance token when the primary
+            # address is missing or is not indexed as a token (e.g. a locker/staking contract).
+            candidates = []
             chain_id = item.get("holder_token_chain")
             token_addr = item.get("holder_token_address")
-            if (not chain_id or not token_addr or str(token_addr) == "None") and item.get("documented_holder_token"):
-                chain_id = item["documented_holder_token"].get("chain")
-                token_addr = item["documented_holder_token"].get("address")
-            holders_count = holder_collector.fetch_holder_count(chain_id, token_addr)
+            if chain_id and token_addr and str(token_addr) != "None":
+                candidates.append((chain_id, token_addr, item.get("holder_token_label") or str(token_addr)))
+            doc = item.get("documented_holder_token") or {}
+            if doc.get("chain") and doc.get("address"):
+                candidates.append((doc["chain"], doc["address"], doc.get("label") or str(doc["address"])))
+            for c_chain, c_addr, c_label in candidates:
+                holders_count = holder_collector.fetch_holder_count(c_chain, c_addr)
+                if holders_count is not None and holders_count > 0:
+                    holder_token_used = f"{c_label} @ {c_chain}"
+                    break
             if holders_count is not None and holders_count > 0:
                 holders_minus_voters = max(0, int(holders_count) - int(voter_summary["unique_voters"]))
                 holder_participation_pct = round(voter_summary["unique_voters"] / holders_count * 100.0, 4)
@@ -206,6 +216,7 @@ def run_observatory(
             "token_holders": holders_count,
             "holders_minus_voters": holders_minus_voters,
             "holder_participation_pct": holder_participation_pct,
+            "holder_token_used": holder_token_used,
         })
 
     summary_df = pd.DataFrame(summary_rows)
